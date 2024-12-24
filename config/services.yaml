@@ -22,3 +22,8 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    App\Services\ProductServiceApi\ProductServiceApiClient:
+        arguments:
+            $baseUri: "%env(resolve:PRODUCT_SERVICE_API_BASE_URI)%"
+        public: true
